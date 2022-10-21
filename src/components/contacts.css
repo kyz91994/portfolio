@@ -1,0 +1,160 @@
+.contact-box {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  align-self: center;
+  margin-bottom: 40px;
+}
+
+form {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.contact-form-input {
+  line-height: 2;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  background-color: rgba(21, 32, 46, 0.75);
+  border: 1px solid rgb(0, 0, 0, 0);
+  backdrop-filter: blur(2px);
+}
+
+textarea.contact-form-input {
+  resize: none;
+}
+
+.contact-form-input:focus {
+  outline: none;
+  border: 1px solid rgb(137, 137, 137);
+}
+
+.message-send {
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  background-color: rgba(72, 211, 72, 0.5);
+  font-size: 1.5rem;
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  animation: showAlert 4s;
+  opacity: 0;
+}
+
+@keyframes showAlert {
+  0% {
+    opacity: 0;
+    bottom: 0%;
+  }
+  10% {
+    opacity: 1;
+    bottom: 5%;
+  }
+  90% {
+    opacity: 1;
+    bottom: 5%;
+  }
+  100% {
+    opacity: 0;
+    bottom: 10%;
+  }
+}
+
+.contact-form-submit {
+  background-color: transparent;
+  color: var(--accent-color-red);
+  padding: 10px 20px;
+  align-self: flex-end;
+  min-width: 150px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.contact-text {
+  align-self: center;
+  font-size: 1.2rem;
+}
+
+.contact-links {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-link {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.contact-link a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.contact-link img {
+  position: absolute;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.rotator img:hover {
+  animation: 1s rotator;
+}
+
+.airplane:hover img {
+  animation: 1s airplane;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-30deg);
+  }
+  40% {
+    transform: rotate(30deg);
+  }
+  60% {
+    transform: rotate(-30deg);
+  }
+  80% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes airplane {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  80% {
+    transform: translate(300px, -300px);
+    opacity: 0;
+  }
+  81% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
